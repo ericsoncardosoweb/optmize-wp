@@ -23,264 +23,228 @@ class grupodpg_Settings_Page {
 			<h1>Otimização de Temas - Grupo DPG</h1>
 			<?php settings_errors(); ?>
 			<form method="POST" action="options.php">
-			  <!-- Nav tabs -->					
-				<ul class="nav nav-tabs">						
-					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#meta-data">Meta Data</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#custom">Personalização</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#seo">SEO</a>
-					</li>
-				</ul>
-
-				<!-- Tab panes -->
-				<div class="tab-content">
-					<div class="tab-pane active container" id="meta-data">
-						<?php settings_fields( 'grupodpg_meta_data' ); do_settings_sections( 'grupodpg_meta_data' );?>
-					</div>
-					<div class="tab-pane container" id="custom">
-						<?php settings_fields( 'grupodpg_custom' ); do_settings_sections( 'grupodpg_custom' ); ?>
-					</div>
-					<div class="tab-pane container" id="seo">
-						<?php settings_fields( 'grupodpg_seo' ); do_settings_sections( 'grupodpg_seo' ); ?>
-					</div>
-				</div>
 				<?php
-					// settings_fields( 'grupodpg' );
-					// do_settings_sections( 'grupodpg' );
+					settings_fields( 'grupodpg' );
+					do_settings_sections( 'grupodpg' );
 					submit_button();
 				?>
 			</form>
 		</div> <?php
 	}
 	public function wph_setup_sections() {
-		add_settings_section( 'grupodpg_section_tab_1', '', array(), 'grupodpg_meta_data' );
-		add_settings_section( 'grupodpg_tab_2', '', array(), 'grupodpg_custom' );
-		add_settings_section( 'grupodpg_tab_3', '', array(), 'grupodpg_seo' ); 
+		add_settings_section( 'grupodpg_section', '', array(), 'grupodpg' );
 	}
 	public function wph_setup_fields() {
 		// Meta Data
-		$fieldsMD = array(
+		$fields = array(
 			array(
 				'label' => 'Logos',
 				'id' => 'logo',
 				'type' => 'media',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 				'desc' => 'Logotipo. Procure utilizar imagens otimizadas e com tamanho máximo de 200px de largura',
 			),
 			array(
 				'label' => 'Imagem de Compartilhamento',
 				'id' => 'image_og',
 				'type' => 'media',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 				'desc' => 'Procure utilizar imagens otimizadas e com tamanho único de de 800x400px',
 			),
 			array(
 				'label' => 'Nome da Empresa',
 				'id' => 'company_name',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Seguimento',
 				'id' => 'company_seguiment',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'WhatsApp',
 				'id' => 'company_whatsapp',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 				'desc' => 'Celular ou WhatsApp Principal',
 			),
 			array(
 				'label' => 'Telefone 1',
 				'id' => 'company_phone',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 				'desc' => 'Telefone Fixo',
 			),
 			array(
 				'label' => 'E-mail',
 				'id' => 'company_email',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Endereço',
 				'id' => 'company_address',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cidade',
 				'id' => 'company_city',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Estado / UF',
 				'id' => 'company_uf',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'CEP',
 				'id' => 'company_zipcode',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Geolocation',
 				'id' => 'geolocation',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
+			),
+			array(
+				'label' => 'URL da Página de Contato',
+				'id' => 'contact_page',
+				'type' => 'text',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Usuário Twitter',
 				'id' => 'company_twitter',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Facebook',
 				'id' => 'company_facebook',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Linkedin',
 				'id' => 'company_linkedin',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Instagram',
 				'id' => 'company_instagram',
 				'type' => 'text',
-				'section' => 'grupodpg_section_tab_1',
+				'section' => 'grupodpg_section',
 			),
-		);
-		foreach( $fieldsMD as $field ){
-			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'grupodpg_meta_data', $field['section'], $field );
-			register_setting( 'grupodpg_meta_data', $field['id'] );
-		}
-
-		// Apareance
-		$fieldsCustom = array(
 			array(
 				'label' => 'Container',
 				'id' => 'container',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Espaçamentos',
 				'id' => 'spaces',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => '	 Tamanho da Fonte Padrão',
 				'id' => 'font-size',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Fonte Primária',
 				'id' => 'fonte_primaria',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Fonte Secondária',
 				'id' => 'fonte_secondaria',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cor Primária',
 				'id' => 'cor_primaria',
 				'type' => 'color',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cor Secondária',
 				'id' => 'cor_secondaria',
 				'type' => 'color',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cor de Contraste',
 				'id' => 'cor_contrast',
 				'type' => 'color',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cor de Destaque',
 				'id' => 'cor_de_destaque',
 				'type' => 'color',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cor de Paralela',
 				'id' => 'cor_paralela',
 				'type' => 'color',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cor de Texto',
 				'id' => 'cor_de_texto',
 				'type' => 'color',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Cor de Texto Contrast',
 				'id' => 'cor_de_texto_contrast',
 				'type' => 'color',
-				'section' => 'grupodpg_tab_2',
+				'section' => 'grupodpg_section',
 			),
-		);
-		foreach( $fieldsCustom as $field ){
-			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'grupodpg_custom', $field['section'], $field );
-			register_setting( 'grupodpg_custom', $field['id'] );
-		}
-
-		// SEO
-		$fields = array(
 			array(
 				'label' => 'Google Analytics Tracking ID',
-				'id' => 'ga',
+				'id' => 'ga', 
 				'type' => 'text',
-				'section' => 'grupodpg_tab_3',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => '	 Google Tag Manager ID',
 				'id' => 'gtm',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_3',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Google Search Console Verification',
 				'id' => 'search_verification',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_3',
+				'section' => 'grupodpg_section',
 			),
 			array(
 				'label' => 'Facebook Custom Audience Pixel ID',
 				'id' => 'fb_pixel',
 				'type' => 'text',
-				'section' => 'grupodpg_tab_3',
+				'section' => 'grupodpg_section',
 			),
 		);
 		foreach( $fields as $field ){
-			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'grupodpg_seo', $field['section'], $field );
-			register_setting( 'grupodpg_seo', $field['id'] );
+			add_settings_field( $field['id'], $field['label'], array( $this, 'wph_field_callback' ), 'grupodpg', $field['section'], $field );
+			register_setting( 'grupodpg', $field['id'] );
 		}
+
 	}
 	public function wph_field_callback( $field ) {
 		$value = get_option( $field['id'] );

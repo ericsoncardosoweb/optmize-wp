@@ -646,6 +646,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php endif; ?>
 
 <?php if(!empty($ga)) : ?>
+<script src="http://www.google-analytics.com/ga.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	var pageTracker = _gat._getTracker("<?= $ga ?>");
+	pageTracker._trackPageview();
+</script>
 <?php endif; ?>
 <?php if(!empty($facebookId)) : ?>
 <!-- Facebook Pixel Code -->
