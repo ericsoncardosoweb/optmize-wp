@@ -574,7 +574,7 @@ function hook_seometatags() { ?>
 	<?php $geolocationMD=get_option('geolocation'); $geolocationMD=explode(',',$geolocationMD); ?>	
   <meta property="place:location:latitude" content="<?= $geolocationMD[0]; ?>" />
   <meta property="place:location:longitude" content="<?= $geolocationMD[1]; ?>" />
-  <meta name="copyright"content="<?= get_bloginfo('title'); ?>">
+  <meta name="copyright"content="<?= get_option('company_name'); ?>">
   <meta name="format-detection" content="telephone=no">
 
   <!-- <meta name="twitter:card" content="summary" />
@@ -609,8 +609,8 @@ function hook_seometatags() { ?>
 				"email": "<?= get_option('company_email'); ?>",
 				"contactType": "customer service"
 			},			
-			"image": "<?= get_option('image_og'); ?>"",
-			"logo": "<?= get_option('logo'); ?>""
+			"image": "<?= get_option('image_og'); ?>",
+			"logo": "<?= get_option('logo'); ?>"
 		}
 	</script>
 

@@ -72,12 +72,12 @@ remove_action( 'wp_head', 'wp_generator' ) ;
 remove_action( 'wp_head', 'wlwmanifest_link' ) ;
 
 // Remove JQuery Migrate
-function deregister_qjuery() { 
-if ( !is_admin() ) {
-wp_deregister_script('jquery');
-}
-} 
-add_action('wp_enqueue_scripts', 'deregister_qjuery');
+// function deregister_qjuery() { 
+// if ( !is_admin() ) {
+// wp_deregister_script('jquery');
+// }
+// } 
+// add_action('wp_enqueue_scripts', 'deregister_qjuery');
 
 // Disable Self Pingback
 function disable_pingback( &$links ) {
