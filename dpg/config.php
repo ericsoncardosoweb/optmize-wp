@@ -1,4 +1,6 @@
 <?php
+require_once 'security.php';
+require_once 'optmize.php';
 /* Inserir Scripts e Estilos */
 // Register on admin sheets
 function dpg_assets() {
